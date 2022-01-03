@@ -1,5 +1,4 @@
-﻿using ConsoleApp1.Leetcode;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,55 +10,47 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Hello World!");
 
-            //Q2 q = new Q2();
-            //int[] test = new int[] { -1, 0, 1, 2, -1, -4 };
-            //var result = q.ThreeSum(test);
 
-            string a = "abcde";
-            string b = "bceaf";
-
-            var result = checkString(a, b);
 
         }
 
-        private static bool checkString(string a, string b)
+
+        /// <summary>
+        /// https://leetcode-cn.com/problems/3sum/
+        /// </summary>
+        public class Q2
         {
-
-            if ((a.Length != b.Length) || string.IsNullOrEmpty(a) || string.IsNullOrEmpty(b))
+            public IList<IList<int>> ThreeSum(int[] nums)
             {
-                return false;
+                List<int> numList = nums.ToList();
+
+                List<IList<int>> result = new List<IList<int>>();
+
+                for (int i = 0; i < numList.Count; i++)
+                {
+                    var target = -numList[i];
+
+                    for (int j = i + 1; j < numList.Count; j++)
+                    {
+                        var targetIndex = numList.FindIndex(j + 1, o => o == target - numList[j]);
+
+                        if (targetIndex > -1)
+                        {
+                            var tempResult = new List<int>() { numList[i], numList[j], numList[targetIndex] }.OrderBy(o => o).ToArray();
+                            if (!result.Contains(tempResult))
+                            {
+                                result.Add(tempResult);
+                            }
+                        }
+                    }
+                }
+
+
+
+                return result;
             }
-
-            List<char> aList = a.ToCharArray().ToList();
-
-            for (int i = 0; i < aList.Count; i++)
-            {
-                //get string
-                string tempA = "";
-                foreach (var item in aList)
-                {
-                    tempA += item.ToString();
-                }
-
-                //check
-                if (tempA == b)
-                {
-                    return true;
-                }
-
-                //shift
-                var a0 = aList[0];
-                for (int j = 0; j < aList.Count - 1; j++)
-                {
-                    aList[j] = aList[j + 1];
-                }
-                aList[aList.Count()-1] = a0;
-            }
-
-
-            return false;
-
         }
+
     }
 }
 
