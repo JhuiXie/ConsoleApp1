@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.32014.148
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Johnny_Leetcode_ConsoleApp", "ConsoleApp1\Johnny_Leetcode_ConsoleApp.csproj", "{7D8AFAFE-C19F-4E4E-AEA0-F9BAC32375FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp1\ConsoleApp.csproj", "{7D8AFAFE-C19F-4E4E-AEA0-F9BAC32375FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Johnny_Leetcode_ConsoleAppTests", "Johnny_Leetcode_ConsoleAppTests\Johnny_Leetcode_ConsoleAppTests.csproj", "{BB0136BA-A322-4D50-8D13-6D9ED5038C14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppTests", "Johnny_Leetcode_ConsoleAppTests\ConsoleAppTests.csproj", "{BB0136BA-A322-4D50-8D13-6D9ED5038C14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
